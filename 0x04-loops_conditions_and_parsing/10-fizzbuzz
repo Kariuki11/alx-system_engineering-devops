@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 for i in {1..100}; do
   if [[ $((i % 3)) -eq 0 && $((i % 5)) -eq 0 ]]; then
