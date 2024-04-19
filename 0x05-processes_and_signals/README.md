@@ -1,0 +1,3 @@
+In a Unix-like operating system, processes are the instances of a running program. Each process has its own process ID (PID) and memory space, and it can contain multiple threads. Processes are managed by the kernel, which schedules them for execution on the CPU and provides them with system resources.
+
+Signals are a way for processes to communicate with each other and with the kernel. A signal is a small message that can be sent to a process to notify it of an event or request a specific action. For example, the SIGKILL signal is used to terminate a process, and the SIGUSR1 and SIGUSR2 signals are user-defined signals that can be used for custom purposes.
