@@ -1,0 +1,4 @@
+Debugging involves identifying and resolving issues or errors that occur within the various layers of a web application's architecture. The webstack, or web stack, refers to the collection of technologies and components used to develop and run web applications. This usually includes the client-side technologies (such as HTML, CSS, and JavaScript), the server-side technologies (like web servers, application servers, and databases), and everything in between that facilitates communication and data processing.
+
+Deep debugging in the webstack implies investigating issues that might occur not only on the surface level but also within the underlying layers of the web application architecture. This can include debugging problems in frontend code, backend code, interactions between different components, as well as issues related to networking, database queries, caching, and more.
+
