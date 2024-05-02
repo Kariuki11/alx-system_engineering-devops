@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Function to output subdomain information
+
+set -o errexit  # Exit script immediately on errors
+set -o nounset  # Disallow unset variables
+
+dns_config() {
+    line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+}
+
+# If no subdomain is specified, audit all of them
+if [[ $# -eq 1 ]]; then
+  dns_config "$1" "www"
+  dns_config "$1" "lb-01"
+  dns_config "$1" "web-01"
+  dns_config "$1" "web-02"
+
+# If a subdomain is specified, audit only that one
+elif [[ $# -eq 2 ]]; then
+  dns_config "$1" "$2"
+
+# If the number of arguments is incorrect, display an error message
+else
+  echo "Usage: $0 <domain> [subdomain]" >&2
+  exit 1
+fi
